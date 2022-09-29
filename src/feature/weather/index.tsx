@@ -9,7 +9,7 @@ const Weather = () => {
 	const [dataFull, setDataFull] = useState<IWeatherData>()
 	const [latitude, setLatitude] = useState<number>(0)
 	const [longitude, setLongitude] = useState<number>(0)
-	const [currentCity, setCurrentCity] = useState('')
+	const [currentCity, setCurrentCity] = useState('Berlin')
 	const debounceFn = useCallback(
 		debounce(city => {
 			setCurrentCity(city)
@@ -58,7 +58,7 @@ const Weather = () => {
 						getLatLong &&
 							(await axios
 								.get(
-									`${ForcastUlr}?lat=${getLatLong.lat}&lon=${getLatLong.lan}&exclude=minutely,alerts&units=metric&appid=${API_KEY}`
+									`${ForcastUlr}?lat=${getLatLong.lat}&lon=${getLatLong.lon}&exclude=minutely,alerts&units=metric&appid=${API_KEY}`
 								)
 								.then(result => {
 									setDataFull(result.data)
@@ -80,7 +80,7 @@ const Weather = () => {
 						getLatLong &&
 							(await axios
 								.get(
-									`${ForcastUlr}?lat=${getLatLong.lat}&lon=${getLatLong.lan}&exclude=minutely,alerts&units=metric&appid=${API_KEY}`
+									`${ForcastUlr}?lat=${getLatLong.lat}&lon=${getLatLong.lon}&exclude=minutely,alerts&units=metric&appid=${API_KEY}`
 								)
 								.then(result => {
 									setDataFull(result.data)
