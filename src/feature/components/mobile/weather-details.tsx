@@ -43,9 +43,9 @@ const WeatherDetails = ({ data, dataSummary }: WeatherDetailsProps) => {
 							</span>
 						</div>
 						<div className='flex flex-1'>
-							<WiThermometerExterior size={28} />{' '}
+							<WiThermometerExterior size={28} />
 							<span className='font-medium'>
-								{Math.round(dataSummary.main?.temp_max)}℃
+								{Math.round(dataSummary.main?.temp_min)}℃
 							</span>
 						</div>
 					</div>
