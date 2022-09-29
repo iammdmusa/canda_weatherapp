@@ -16,4 +16,4 @@ Weather Apps demo
     - `pnpm preview` - locally preview the production build.
 
 ##Live Demo
-URL:
+URL: https://canda-weather-app.netlify.app/
