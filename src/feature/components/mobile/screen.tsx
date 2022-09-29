@@ -18,7 +18,7 @@ interface APpProps {
 
 const MobileScreen = ({ dataSummary, callback, dataFull }: APpProps) => {
 	const cityRef = useRef()
-	const [isOpen, setIsOpen] = useState<boolean>(false)
+	const [isOpen, setIsOpen] = useState<boolean>(true)
 	const [isFull, setIsFull] = useState<boolean>(false)
 	const onHandleCallback = (): void => {
 		setIsFull(!isFull)
@@ -46,9 +46,17 @@ const MobileScreen = ({ dataSummary, callback, dataFull }: APpProps) => {
 						<div className='relative w-full'>
 							<BatryAndSingnal />
 							<div className='relative mb-4 flex justify-between'>
-								<WiDirectionLeft size={32} onClick={onHandleCallback} />
+								<WiDirectionLeft
+									size={32}
+									onClick={onHandleCallback}
+									className='cursor-pointer'
+								/>
 
-								<BiDotsVertical size={32} onClick={onHandleOpen} />
+								<BiDotsVertical
+									size={32}
+									onClick={onHandleOpen}
+									className='cursor-pointer'
+								/>
 							</div>
 							{isOpen ? (
 								<>
@@ -59,9 +67,13 @@ const MobileScreen = ({ dataSummary, callback, dataFull }: APpProps) => {
 											onChange={handleInputWithDebounce}
 											id='city'
 											className='block w-full border-0 border-b border-gray-300 bg-transparent text-white outline-none ring-0 placeholder:text-white focus:border-0 focus:outline-none focus:ring-0'
-											placeholder='City name...'
+											placeholder='Type City...'
 										/>
-										<FaLongArrowAltRight size={24} onClick={onHandleSubmit} />
+										<FaLongArrowAltRight
+											size={24}
+											onClick={onHandleSubmit}
+											className='cursor-pointer'
+										/>
 									</div>
 								</>
 							) : undefined}

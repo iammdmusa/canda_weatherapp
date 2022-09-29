@@ -20,7 +20,7 @@ const WeatherDetails = ({ data, dataSummary }: WeatherDetailsProps) => {
 				<div className='rounded-3xl bg-white/30 p-4 text-center shadow backdrop-blur-md'>
 					<div className='text-4xl'>{dataSummary.name}</div>
 					<div className='mb-2'>
-						Flees like {Math.round(dataSummary?.main?.feels_like)}℃
+						Feels like {Math.round(dataSummary?.main?.feels_like)}℃
 					</div>
 					<div className='flex justify-center text-xl capitalize'>
 						{dataSummary?.weather[0]?.description}
@@ -43,7 +43,7 @@ const WeatherDetails = ({ data, dataSummary }: WeatherDetailsProps) => {
 							</span>
 						</div>
 						<div className='flex flex-1'>
-							<WiThermometer size={28} className='text-yellow-300' />{' '}
+							<WiThermometer size={28} className='text-yellow-300' />
 							<span className='font-medium'>
 								{Math.round(dataSummary.main?.temp_max)}℃
 							</span>
@@ -51,7 +51,7 @@ const WeatherDetails = ({ data, dataSummary }: WeatherDetailsProps) => {
 					</div>
 					<div className='mb-2 flex justify-center'>
 						<div className='flex flex-1'>
-							<WiSunrise size={28} className='text-yellow-200' />{' '}
+							<WiSunrise size={28} className='text-yellow-200' />
 							<span className='font-medium'>{`${new Date(
 								data.current.sunrise
 							).getHours()} : ${new Date(
@@ -59,7 +59,7 @@ const WeatherDetails = ({ data, dataSummary }: WeatherDetailsProps) => {
 							).getMinutes()}`}</span>
 						</div>
 						<div className='flex flex-1'>
-							<WiSunset size={28} className='text-red-200' />{' '}
+							<WiSunset size={28} className='text-red-100' />
 							<span className='font-medium'>{`${new Date(
 								data.current.sunset
 							).getHours()} : ${new Date(
@@ -67,17 +67,17 @@ const WeatherDetails = ({ data, dataSummary }: WeatherDetailsProps) => {
 							).getMinutes()}`}</span>
 						</div>
 						<div className='flex flex-1'>
-							<WiStrongWind size={28} className='text-red-200' />{' '}
+							<WiStrongWind size={28} />
 							<span className='font-medium'>{data.current.wind_speed} </span>
 						</div>
 					</div>
 					<div className='flex justify-center px-2'>
 						<div className='flex flex-1'>Day</div>
 						<div className='flex flex-1'>
-							<WiThermometerExterior size={28} className='text-red-200' />
+							<WiThermometerExterior size={28} className='text-yellow-300' />
 						</div>
 						<div className='flex flex-1'>
-							<WiThermometer size={28} className='text-red-200' />
+							<WiThermometer size={28} />
 						</div>
 					</div>
 					{data.daily.sort()?.map((item, index: number) => {
